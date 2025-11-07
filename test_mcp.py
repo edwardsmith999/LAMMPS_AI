@@ -118,7 +118,13 @@ def test_lammps_mcp():
                         "lattice fcc 0.8442",
                         "region box block 0 4 0 4 0 4",
                         "create_box 1 box",
-                        "create_atoms 1 box"
+                        "create_atoms 1 box",
+                        "mass            1 1.0",
+                        "velocity        all create 1.44 87287 loop geom",
+                        "pair_style      lj/cut 2.5",
+                        "pair_coeff      1 1 1.0 1.0 2.5",
+                        "fix             1 all nve",
+                        "run             10"
                     ]
                 }
             }
