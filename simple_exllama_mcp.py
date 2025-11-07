@@ -74,6 +74,22 @@ Available tools:
 To use a tool, respond with: USE_TOOL: tool_name | {"argument": "value"}
 
 Example: USE_TOOL: lammps_run_commands | {"commands": ["units lj", "atom_style atomic"]}
+
+Start from this LAMMPS input script and adjust as needed
+
+units lj
+atom_style atomic
+lattice fcc 0.8442
+region box block 0 4 0 4 0 4
+create_box 1 box
+create_atoms 1 box
+mass            1 1.0
+velocity        all create 1.44 87287 loop geom
+pair_style      lj/cut 2.5
+pair_coeff      1 1 1.0 1.0 2.5
+fix             1 all nve
+run             10
+
 """
 
 # === 4. Simple agentic loop ===
