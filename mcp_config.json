@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "lammps": {
+      "command": "python3",
+      "args": ["/home/es205/codes/lammps-mcp-server/lammps_mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "/usr/local/lib/python3/dist-packages"
+      }
+    }
+  }
+}
